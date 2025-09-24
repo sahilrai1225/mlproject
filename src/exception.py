@@ -14,12 +14,8 @@ def error_message_detail(error,error_detail:sys):
     
 class CustomException(Exception):
     def __init__(self,error_message,error_detail:sys):
-        super().__init__(error_message) ## We are inheriting exception class here ## in this line innit merthod is overriden
+        super().__init__(error_message) 
         self.error_message=error_message_detail(error_message,error_detail=error_detail)
         
     def __str__(self):
-        return self.error_message ## this will common everywhere when you use try catch block
-    
-    
-# main error i was doing that it was super().__init__ is was using super.__init__
-# ,str(error) it is and i was using .str(error)
+        return self.error_message 
