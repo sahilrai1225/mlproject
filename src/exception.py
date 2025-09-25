@@ -1,5 +1,5 @@
 import sys
-import logging # to check that everything is working fine or not
+from src.logger import logging # to check that everything is working fine or not
 
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb=error_detail.exc_info()
