@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTranformationConfig
+# just to check everything isworking perfect or not
+from src.components.data_transformation import DataTransformation 
 @dataclass
 class DataIngestionConfig:
     train_data_path:str=os.path.join('artifacts',"train.csv") 
@@ -53,4 +56,13 @@ class DataIngestion:
         
 if __name__=="__main__": ## initiate
     obj=DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data,test_data=obj.initiate_data_ingestion()
+    
+    
+    data_transformation=DataTransformation()
+    data_transformation.initiate_data_tranformation(train_data,test_data) # most of execution will happen in this data tranformation
+    # inside this data tranformation we neeed to give our train data and test data
+    # here we combined data ingestion and then data tranformation
+    # check import aage piche toh nahi hue
+    
+    
