@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Marks Portal</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f9;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      color: white;
+      padding: 30px 0;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+    }
+    .equations {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+    .content {
+      padding: 40px 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: inline-block;
+      padding: 25px;
+      margin: 20px;
+      transition: transform 0.3s;
+      width: 90%;
+      max-width: 600px;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    h2 {
+      color: #0077b6;
+      margin-bottom: 15px;
+    }
+    footer {
+      background: #333;
+      color: white;
+      padding: 15px 0;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 Welcome To Student Marks Portal</h1>
+    <p>Learn. Calculate. Achieve.</p>
+    <div class="equations">
+      ∑ x² + y² = r² &nbsp; | &nbsp; E = mc² &nbsp; | &nbsp; a² + b² = c²
+    </div>
+  </header>
+
+  <div class="content">
+    <h2>📖 Student Learning</h2>
+    <div class="card">
+      <img src="student-studying.jpg" alt="Student Studying Math">
+      <p>A student deeply engaged in solving mathematics with books and formulas.</p>
+    </div>
+
+    <h2>📊 Latest Marks Overview</h2>
+    <div class="card">
+      <img src="marks-sample.png" alt="Student Marks Chart">
+      <p>Sample marks visualization across subjects.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Student Marks Portal | Knowledge is Power 🔢
+  </footer>
+</body>
+</html>
