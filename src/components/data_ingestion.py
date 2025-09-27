@@ -8,8 +8,13 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
 from src.components.data_transformation import DataTranformationConfig
-# just to check everything isworking perfect or not
+
 from src.components.data_transformation import DataTransformation 
+
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
+
+
 @dataclass
 class DataIngestionConfig:
     train_data_path:str=os.path.join('artifacts',"train.csv") 
@@ -30,7 +35,7 @@ class DataIngestion:
             logging.info('Read the dataset as dataframe')
             
             
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)#creating folder
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
             
@@ -54,15 +59,15 @@ class DataIngestion:
             raise CustomException(e,sys)
         
         
-if __name__=="__main__": ## initiate
+if __name__=="__main__": 
     obj=DataIngestion()
     train_data,test_data=obj.initiate_data_ingestion()
     
     
     data_transformation=DataTransformation()
-    data_transformation.initiate_data_tranformation(train_data,test_data) # most of execution will happen in this data tranformation
-    # inside this data tranformation we neeed to give our train data and test data
-    # here we combined data ingestion and then data tranformation
-    # check import aage piche toh nahi hue
+    train_arr,test_arr,_=data_transformation.initiate_data_tranformation(train_data,test_data) 
     
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
+    # printing this will give r2_score
     
